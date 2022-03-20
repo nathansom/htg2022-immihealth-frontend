@@ -14,6 +14,7 @@ export default function Home() {
   useEffect(
     () => {
       setLocale(navigator.language.substring(0,2))
+
     }, []
   );
  
@@ -33,11 +34,11 @@ export default function Home() {
         <p style={{marginTop:"5vh"}}>Already have an account?</p>
         <Button 
           variant="contained" 
-          color="secondary"
+          style={{color:"#0071DA", backgroundColor:"#ffffff"}}
           onClick={
             () => router.push('/login')
           }
-        >Login</Button>
+        ><strong>Login</strong></Button>
         <Link href="/">Forgot my password</Link>
       </Layout>
     </>

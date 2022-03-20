@@ -10,6 +10,7 @@ export default function LayoutAlt({ children }) {
                 <img
                     src="/immihealth.svg"
                     alt="logo"
+                    width="200px"
                 />
             </footer>
         </div>

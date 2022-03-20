@@ -1,17 +1,13 @@
 import styles from '../styles/Main.module.css'
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 
 import LayoutAlt from '../components/LayoutAlt';
-import Box from '@mui/material/Box';
+import UploadMenu from '../components/UploadMenu';
 import { Card, 
         CardContent, 
         Button,
-        SwipeableDrawer,
-        List,
-        ListItem,
-        ListItemIcon,
-        ListItemText
+        SwipeableDrawer
     } from '@mui/material';
 import Fab from '@mui/material/Fab';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
@@ -39,47 +35,6 @@ export default function Main() {
         }
         setMenuStat(open);
       };
-
-    const uploadMenu = () => {
-        return (
-            <Box
-                sx={{width:'auto'}}
-                role="presentation"
-                onClick={toggleDrawer(false)}
-                onKeyDown={toggleDrawer(false)}
-            >
-                <form>
-                    <input id="camera" type="file" accept="image/*" capture="environment" />
-                    <label htmlFor="camera">Scan</label>
-                    <input 
-                        id="fileupload" 
-                        type="file" 
-                        size="50000000"
-                        accept=".jpeg, .jpg, .png, .bmp, .tiff, .pdf"
-                    />
-                    <label htmlFor="fileupload">Upload File</label>
-                </form> 
-                <List style={{display:'flex',flexDirection:'row'}}>
-                    <ListItem 
-                        button 
-                        key="Scan" 
-                        style={{margin:"0 10vw"}}
-                    >
-                        <ListItemIcon>
-                            <PhotoCameraIcon />
-                        </ListItemIcon>
-                        <ListItemText primary="Scan"/>
-                    </ListItem>
-                        <ListItem button key="Upload" style={{margin:"0 10vw"}}>
-                        <ListItemIcon>
-                            <UploadIcon />
-                        </ListItemIcon>
-                        <ListItemText primary="Upload"/>
-                    </ListItem>
-                </List>
-            </Box>
-        )
-    }
 
     return (
         <LayoutAlt>
@@ -117,13 +72,14 @@ export default function Main() {
             <Button 
                 variant="contained" 
                 className={styles.button_card}
+                style={{marginBottom:"100px"}}
                 onClick={ () => router.push('/insurancedocs') } 
             >
                 <VerifiedUserIcon />
                 <h2>Insurance Documents</h2>
             </Button>
             <Fab 
-                color="secondary" 
+                color="primary" 
                 aria-label="submit"
                 className={styles.bottom_center}
                 onClick={toggleDrawer(true)}
@@ -136,7 +92,7 @@ export default function Main() {
                 onClose={toggleDrawer(false)}
                 onOpen={toggleDrawer(false)}
             >
-                {uploadMenu()}
+                <UploadMenu toggle={toggleDrawer(false)} />
             </SwipeableDrawer>
         </LayoutAlt>
     )

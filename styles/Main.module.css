@@ -1,4 +1,5 @@
 .container {
+    position: relative;
     min-height: 100vh;
     padding: 0 0.5rem;
     display: flex;
@@ -25,8 +26,9 @@
 
   .button_card {
       width: 90vw;
-      margin: 10px 0;
+      margin: 10px 5px;
       display: flex;
+      align-self: center;
       background-color: white;
       color: #000000;
       transition: all 1s;
@@ -58,8 +60,22 @@
 }
 
 .bottom_center {
-    position:absolute;
-    bottom: 2%;
-    left: 45vw;
+    position: absolute;
+    left: 45%;
+    bottom: 100px;
+    width: 56px;
+}
+
+.card_white {
+    display: flex;
+    padding: 10px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 40vw;
+    min-height: 60vh;
+    background-color: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0px 4px 7px rgba(0,0,0,0.5);
 }
   

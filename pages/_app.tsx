@@ -26,25 +26,25 @@ export default function MyApp({ Component, pageProps }: AppProps) {
           name="viewport"
           content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"
         />
-        <meta name="description" content="Description" />
-        <meta name="keywords" content="Keywords" />
+        <meta name="description" content="Health management app to lower language barriers" />
+        <meta name="keywords" content="refugees, healthcare" />
         <title>ImmiHealth | Better Health, Better Life</title>
 
         <link rel="manifest" href="/manifest.json" />
         <link
-          href="/icons/favicon-16x16.png"
+          href="/icons/icon-16x16.png"
           rel="icon"
           type="image/png"
           sizes="16x16"
         />
         <link
-          href="/icons/favicon-32x32.png"
+          href="/icons/icon-32x32.png"
           rel="icon"
           type="image/png"
           sizes="32x32"
         />
-        <link rel="apple-touch-icon" href="/apple-icon.png"></link>
-        <meta name="theme-color" content="#317EFB" />
+        <link rel="apple-touch-icon" href="/icons/icon-32x32.png"></link>
+        <meta name="theme-color" content="#0085FF" />
       </Head>
       <localeContext.Provider value={{userLocale, changeLocale}}>
         <targetLocaleContext.Provider value={{targetLocale, changeTargetLocale}}>
