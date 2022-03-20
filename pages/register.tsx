@@ -1,21 +1,19 @@
 import styles from '../styles/Register.module.css';
 
 import { useEffect, useState } from 'react';
+import { useRouter } from "next/router";
 import { localeContext, targetLocaleContext, userLocale, targetLocale } from '../lib/locale-context';
 
 import Layout from '../components/Layout'; 
 import Dropdown from '../components/Dropdown';
-import Fab from '@mui/material/Fab';
+import { Box, TextField, Fab } from '@mui/material';
 import CheckIcon from '@mui/icons-material/Check';
 
 const langData = require('../lib/supportedLocales.json')
 const countryData = require('../lib/supportedCountries.json')
 
 export default function Register() {
-
-    function handleClick() {
-        console.log("");
-    }
+    const router = useRouter();
 
     return (
         <>
@@ -26,7 +24,7 @@ export default function Register() {
                     <localeContext.Consumer>
                         { ({ userLocale, changeLocale }) => (
                             <Dropdown 
-                            label="Preferred Language" 
+                            fieldLabel="Preferred Language" 
                             shortLabel="user-language"
                             locale={userLocale} 
                             handleChange={changeLocale} 
@@ -39,7 +37,7 @@ export default function Register() {
                     <targetLocaleContext.Consumer>
                         { ({ targetLocale, changeTargetLocale }) =>
                             <Dropdown 
-                            label="Official Language" 
+                            fieldLabel="Official Language" 
                             shortLabel="official-language"
                             locale={targetLocale} 
                             handleChange={changeTargetLocale} 
@@ -47,10 +45,28 @@ export default function Register() {
                         />
                         }
                     </targetLocaleContext.Consumer>
+                    
+                    <Box
+                        component="form"
+                        sx={{
+                           display: 'flex',
+                           flexDirection: 'column'
+                        }}
+                        noValidate
+                        autoComplete="off"
+                    >
+                        <p style={{marginTop:"50px"}}>Great! Now please answer the questions below to create your account</p>
+                        <TextField id="firstname" label="Firstname" variant="filled" sx={{backgroundColor:"rgba(250,250,250,0.7)", margin:"15px 0"}} />
+                        <TextField id="lastname" label="Lastname" variant="filled" sx={{backgroundColor:"rgba(250,250,250,0.7)", margin:"15px 0"}} />
+                        <TextField id="email" label="Email" variant="filled" sx={{backgroundColor:"rgba(250,250,250,0.7)", margin:"15px 0"}} />
+                        <TextField id="password" label="Password" variant="filled" sx={{backgroundColor:"rgba(250,250,250,0.7)", margin:"15px 0"}} />
+                        <TextField id="confirm-password" label="Confirm Your Password" variant="filled" sx={{backgroundColor:"rgba(250,250,250,0.7)", margin:"15px 0"}} />
+                    
+                    </Box>
                     <Fab color="primary" 
                          aria-label="submit" 
                          className={styles.right_corner}
-                         onClick={handleClick}
+                         onClick={ () => router.push('./onboarding')}
                     >
                         <CheckIcon />
                     </Fab>

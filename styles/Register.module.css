@@ -3,3 +3,8 @@
     bottom: 0%;
     right: 0%;
 }
+
+.flex_row {
+    display: flex;
+    flex-direction: row;
+}

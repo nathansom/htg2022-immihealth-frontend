@@ -4,17 +4,18 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 
-export default function Dropdown({ label, shortLabel, locale, handleChange, data }){
+export default function Dropdown({ fieldLabel, shortLabel, locale, handleChange, data }){
    
     return (
         <Box sx={{ minWidth: 120 }}>
           <FormControl fullWidth>
-          <InputLabel id={`${shortLabel}-select-label`}>{label}</InputLabel>
+          <InputLabel id={`${shortLabel}-select-label`} >{fieldLabel}</InputLabel>
           <Select
               labelId={`${shortLabel}-select-label`}
-              id={`${label}-select`}
+              id={`${fieldLabel}-select`}
               value={locale}
-              label={label}
+              label={fieldLabel}
+              sx={{backgroundColor:"rgba(250,250,250,0.5)"}}
               onChange={handleChange}
             >
               { 
