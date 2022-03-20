@@ -1,3 +1,5 @@
+import { useEffect, useState } from 'react';
+
 import styles from '../styles/Home.module.css';
 import Link from 'next/Link';
 import { useRouter } from 'next/router'
@@ -7,6 +9,13 @@ import Button from '@mui/material/Button';
 
 export default function Home() {
   const router = useRouter();
+  const [locale, setLocale] = useState('en');
+
+  useEffect(
+    () => {
+      setLocale(navigator.language.substring(0,2))
+    }, []
+  );
  
   return (
     <>

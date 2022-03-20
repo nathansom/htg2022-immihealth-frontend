@@ -14,19 +14,17 @@ export default function Home() {
     <>
       <Layout>
       <h1 className={`${styles.title} ${styles.d_none}`}>Welcome to ImmiHealth</h1>
-        <p>Login</p>
+        <h2>Login</h2>
         <FormControl>
-            <InputLabel htmlFor="email-address">Email address</InputLabel>
             <Input id="email-address" type="email" placeholder="Email address" aria-describedby="email-helper-text" autoComplete="off" />
             <FormHelperText id="email-helper-text">Please enter your registered email address</FormHelperText>
-            <InputLabel htmlFor="password" type="password">Password</InputLabel>
-            <Input id="password" placeholer="Password" aria-describedby="password-helper-text" autoComplete="off" />
+            <Input id="password" placeholder="Password" aria-describedby="password-helper-text" autoComplete="off" />
             <FormHelperText id="password-helper-text">Please enter your valid password</FormHelperText>
         </FormControl>
         <Button 
                 variant="contained"
                 onClick={
-                    () => router.push('/register')
+                    () => router.push('/main')
                 }
              >
           Login

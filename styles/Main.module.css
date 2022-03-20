@@ -1,0 +1,65 @@
+.container {
+    min-height: 100vh;
+    padding: 0 0.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+.flex_row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.fullWidth {
+    width: 90vw;
+}
+  
+  .margin_x__10 {
+      margin-top: 10px;
+      margin-bottom: 10px;
+  }
+
+  .button_card {
+      width: 90vw;
+      margin: 10px 0;
+      display: flex;
+      background-color: white;
+      color: #000000;
+      transition: all 1s;
+  }
+
+  .button_card:hover {
+    width: 85vw;
+    margin: 10px 0;
+    display: flex;
+    background-color: #1976D2;
+    color: #ffffff;
+}
+
+
+.button_card__danger {
+    width: 90vw;
+    margin: 10px 0;
+    display: flex;
+    background-color: #8C0000;
+    color: #ffffff;
+    transition: all 1s;
+}
+
+.button_card__danger:hover {
+  width: 85vw;
+  margin: 10px 0;
+  display: flex;
+  background-color: #000000;
+}
+
+.bottom_center {
+    position:absolute;
+    bottom: 2%;
+    left: 45vw;
+}
+  

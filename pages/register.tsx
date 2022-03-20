@@ -12,11 +12,10 @@ const langData = require('../lib/supportedLocales.json')
 const countryData = require('../lib/supportedCountries.json')
 
 export default function Register() {
+
     function handleClick() {
         console.log("");
     }
-
-    
 
     return (
         <>
