@@ -7,4 +7,7 @@ module.exports = withPWA({
     dest: 'public',
     runtimeCaching,
   },
+  typescript: {
+    ignoreBuildErrors: true
+  }
 })
