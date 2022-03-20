@@ -12,7 +12,7 @@ interface DropDown {
   data: any
 }
 
-export default function Dropdown({ fieldLabel, shortLabel, locale, handleChange, data }){
+export default function Dropdown({ fieldLabel, shortLabel, locale, handleChange, data })<DropDown>{
    
     return (
         <Box sx={{ minWidth: 120 }}>
