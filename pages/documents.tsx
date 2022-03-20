@@ -90,7 +90,7 @@ export default function Main() {
                 anchor="bottom"
                 open={menuStat}
                 onClose={toggleDrawer(false)}
-                onOpen={toggleDrawer(false)}
+                onOpen={toggleDrawer(true)}
             >
                 <UploadMenu toggle={toggleDrawer(false)} />
             </SwipeableDrawer>

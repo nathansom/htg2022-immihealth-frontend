@@ -4,6 +4,14 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 
+interface DropDown {
+  fieldLabel: string,
+  shortLabel: string,
+  locale: string,
+  handleChange: any,
+  data: any
+}
+
 export default function Dropdown({ fieldLabel, shortLabel, locale, handleChange, data }){
    
     return (

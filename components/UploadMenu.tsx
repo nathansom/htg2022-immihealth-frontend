@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { useRouter } from 'next/router';
 
 import { Box,
         SwipeableDrawer,
@@ -12,6 +13,12 @@ import UploadIcon from '@mui/icons-material/Upload';
 import PhotoCameraIcon from '@mui/icons-material/PhotoCamera';
 
 export default function UploadMenu({ toggle }) {
+    const router = useRouter();
+
+    const handleChange = (e) => {
+        console.log(e.target.value);
+        router.push('/success')
+    }
 
     return (
         <Box
@@ -20,7 +27,7 @@ export default function UploadMenu({ toggle }) {
             onClick={toggle}
             onKeyDown={toggle}
         >
-            <form style={{display:'none'}}>
+            <form style={{display:'none'}} onChange={handleChange}>
                 <input id="camera" type="file" accept="image/*" capture="environment" />
                 <label htmlFor="camera">Scan</label>
                 <input 
@@ -42,7 +49,7 @@ export default function UploadMenu({ toggle }) {
                             const camScan = document.getElementById('camera');
                             camScan.click();
                             console.log(camScan);
-                            console.log(camScan.value);
+                            console.log('camvalue',camScan.value);
                         }
                     }
                 >
