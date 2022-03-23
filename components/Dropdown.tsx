@@ -9,7 +9,7 @@ interface dropDown {
   shortLabel: string,
   locale: string,
   handleChange: any,
-  data: {}
+  data: any
 
 }
 
@@ -28,7 +28,7 @@ export default function Dropdown({ fieldLabel, shortLabel, locale, handleChange,
               onChange={handleChange}
             >
               { 
-                Object.entries(data).map( ([key, dataValue]) =>  <MenuItem key={key} value={key}>`${dataValue}`</MenuItem> ) }
+                Object.entries(data).map( ([key, dataValue]) =>  <MenuItem key={key} value={key}>{dataValue}</MenuItem> ) }
             </Select>
           </FormControl>
         </Box>

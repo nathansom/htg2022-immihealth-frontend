@@ -6,10 +6,16 @@ import { localeContext, targetLocaleContext, userLocale, targetLocale } from '..
 import { userLocaleInterface, targetLocaleInterface } from '../lib/locale-context';
 
 export default function MyApp({ Component, pageProps }: AppProps) {
-  const [userLocale,setUserLocale] = useState('en');
+  const [userLocale,setUserLocale] = useState('');
   const [targetLocale,setTargetLocale] = useState('');
 
-
+  /* This causes language selector to be unchangeable on register.tsx
+  useEffect(
+    () => {
+      setUserLocale(navigator.language.substring(0,2))
+    }
+  );
+  */
   const changeLocale = (e: React.ChangeEvent<HTMLInputElement>):void => {
     setUserLocale(e.target.value);
   }

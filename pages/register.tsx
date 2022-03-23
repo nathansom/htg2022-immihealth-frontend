@@ -15,10 +15,14 @@ const countryData = require('../lib/supportedCountries.json')
 
 export default function Register() {
     const router = useRouter();
-
-    const [userLocale,setUserLocale] = useState('en');
+    const [userLocale,setUserLocale] = useState('');
     const [targetLocale,setTargetLocale] = useState('');
 
+    useEffect(
+        () => {
+          setUserLocale(navigator.language.substring(0,2))
+        }
+      );
 
   const changeLocale = (e: React.ChangeEvent<HTMLInputElement>):void => {
     setUserLocale(e.target.value);
@@ -40,7 +44,7 @@ export default function Register() {
 
     return (
         <>
-            <Layout>
+            <Layout className={styles.container}>
                 <div style={{position:"relative", padding:"10px 0 100px 0"}}>
             <h1>Welcome!</h1>
                     <p>Please confirm your preferred language</p>
@@ -49,7 +53,7 @@ export default function Register() {
                             <Dropdown 
                             fieldLabel="Preferred Language" 
                             shortLabel="user-language"
-                            locale={userLocale} 
+                            locale={userLocaleState.locale} 
                             handleChange={userLocaleState?.changeLocale} 
                             data={langData}  
                         />
@@ -62,7 +66,7 @@ export default function Register() {
                             <Dropdown 
                             fieldLabel="Official Language" 
                             shortLabel="official-language"
-                            locale={targetLocale} 
+                            locale={targetLocaleState.locale} 
                             handleChange={targetLocaleState?.changeTargetLocale} 
                             data={countryData}  
                         />

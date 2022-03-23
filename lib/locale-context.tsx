@@ -14,11 +14,11 @@ export const userLocale = 'en';
 export const targetLocale = '';
 
 export const localeContext = React.createContext<userLocaleInterface | null>({
-    locale: 'en',
+    locale: '',
     changeLocale: () => {}
 });
 
 export const targetLocaleContext = React.createContext<targetLocaleInterface | null>({
-    locale: 'de',
+    locale: '',
     changeTargetLocale: () => {}
 });
