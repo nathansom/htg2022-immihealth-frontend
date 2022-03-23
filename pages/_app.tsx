@@ -3,18 +3,29 @@ import Head from 'next/head';
 import '../styles/globals.css';
 import { AppProps } from 'next/app';
 import { localeContext, targetLocaleContext, userLocale, targetLocale } from '../lib/locale-context';
+import { userLocaleInterface, targetLocaleInterface } from '../lib/locale-context';
 
 export default function MyApp({ Component, pageProps }: AppProps) {
   const [userLocale,setUserLocale] = useState('en');
   const [targetLocale,setTargetLocale] = useState('');
 
 
-  const changeLocale = (e) => {
+  const changeLocale = (e: React.ChangeEvent<HTMLInputElement>):void => {
     setUserLocale(e.target.value);
   }
 
-  const changeTargetLocale = (e) => {
+  const changeTargetLocale = (e: React.ChangeEvent<HTMLInputElement>):void => {
     setTargetLocale(e.target.value);
+  }
+
+  const userLocaleState: userLocaleInterface = {
+    locale: userLocale,
+    changeLocale: changeLocale
+  }
+
+  const targetLocaleState: targetLocaleInterface = {
+    locale: targetLocale,
+    changeTargetLocale: changeTargetLocale
   }
 
   return (
@@ -46,8 +57,8 @@ export default function MyApp({ Component, pageProps }: AppProps) {
         <link rel="apple-touch-icon" href="/icons/icon-32x32.png"></link>
         <meta name="theme-color" content="#0085FF" />
       </Head>
-      <localeContext.Provider value={{userLocale, changeLocale}}>
-        <targetLocaleContext.Provider value={{targetLocale, changeTargetLocale}}>
+      <localeContext.Provider value={userLocaleState}>
+        <targetLocaleContext.Provider value={targetLocaleState}>
           <Component {...pageProps} />
         </targetLocaleContext.Provider>
       </localeContext.Provider>

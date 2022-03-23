@@ -4,15 +4,16 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 
-interface DropDown {
+interface dropDown {
   fieldLabel: string,
   shortLabel: string,
   locale: string,
   handleChange: any,
-  data: any
+  data: {}
+
 }
 
-export default function Dropdown({ fieldLabel, shortLabel, locale, handleChange, data })<DropDown>{
+export default function Dropdown({ fieldLabel, shortLabel, locale, handleChange, data }: dropDown){
    
     return (
         <Box sx={{ minWidth: 120 }}>
@@ -27,7 +28,7 @@ export default function Dropdown({ fieldLabel, shortLabel, locale, handleChange,
               onChange={handleChange}
             >
               { 
-                Object.entries(data).map( ([key, value]) =>  <MenuItem key={key} value={key}>{value}</MenuItem> ) }
+                Object.entries(data).map( ([key, dataValue]) =>  <MenuItem key={key} value={key}>`${dataValue}`</MenuItem> ) }
             </Select>
           </FormControl>
         </Box>

@@ -21,7 +21,7 @@ export default function Home() {
   return (
     <>
       <Layout>
-      <h1 className={styles.title, styles.d_none}>Welcome to ImmiHealth | Healthcare Information Management Platform to Enhance the Life of Immigrants and Refugees</h1>
+      <h1 className={`${styles.title} ${styles.d_none}`}>Welcome to ImmiHealth | Healthcare Information Management Platform to Enhance the Life of Immigrants and Refugees</h1>
         <p>Are you new here?</p>
         <Button 
           variant="contained"

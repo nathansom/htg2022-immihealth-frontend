@@ -1,7 +1,7 @@
 {
-    "en": "Canada",
-    "en": "U.S.A",
-    "en": "United Kingdom",
+    "en-ca": "Canada",
+    "en-us": "U.S.A",
+    "en-gb": "United Kingdom",
     "fr": "France",
     "de": "Germany",
     "es": "Spain"

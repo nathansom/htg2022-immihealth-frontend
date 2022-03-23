@@ -24,7 +24,7 @@ export default function Register() {
         }
     );
 
-    function handleChange(event) {
+    function handleChange(event:any) {
         event.target.value == "female" ? setIsFemale(true) : setIsFemale(false)
     }
 
@@ -52,11 +52,11 @@ export default function Register() {
                             <div className={styles.flex_row}>
                                 <div onChange={handleChange}>
                                     <input type="radio" id="male" name="gender" value="male" onChange={ () => setIsFemale(false)} />
-                                    <label for="male">Male</label>
+                                    <label htmlFor="male">Male</label>
                                 </div>
                                 <div onChange={handleChange}> 
                                     <input type="radio" id="female" name="gender" value="female" onChange={ () => setIsFemale(true)} />
-                                    <label for="female">Female</label>
+                                    <label htmlFor="female">Female</label>
                                 </div>
                             </div>
 
@@ -65,11 +65,11 @@ export default function Register() {
                                     <div className={styles.flex_row}>
                                         <div>
                                             <input type="radio" id="pregnant" name="pregnancy" value="pregnant" />
-                                            <label for="pregnant">Yes</label>
+                                            <label htmlFor="pregnant">Yes</label>
                                         </div>
                                         <div>
                                             <input type="radio" id="not_pregnant" name="pregnancy" value="not_pregnant" />
-                                            <label for="not_pregnant">No</label>
+                                            <label htmlFor="not_pregnant">No</label>
                                         </div>
                                      </div>
                                    </div>
@@ -78,11 +78,11 @@ export default function Register() {
                                    <div className={styles.flex_row}>
                                         <div>
                                             <input type="radio" id="longer" name="residency" value="longer" />
-                                            <label for="male">Yes</label>
+                                            <label htmlFor="male">Yes</label>
                                         </div>
                                     <div> 
                                          <input type="radio" id="shorter" name="residency" value="shorter" />
-                                        <label for="female">No</label>
+                                        <label htmlFor="female">No</label>
                                     </div>
                                 </div>
                     </Box>

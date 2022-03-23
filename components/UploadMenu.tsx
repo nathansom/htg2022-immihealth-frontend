@@ -1,8 +1,7 @@
-import { useEffect } from 'react';
+import React from 'react';
 import { useRouter } from 'next/router';
 
 import { Box,
-        SwipeableDrawer,
         List,
         ListItem,
         ListItemIcon,
@@ -12,10 +11,10 @@ import { Box,
 import UploadIcon from '@mui/icons-material/Upload';
 import PhotoCameraIcon from '@mui/icons-material/PhotoCamera';
 
-export default function UploadMenu({ toggle }) {
-    const router = useRouter();
+export default function UploadMenu({ toggle }:any) {
+    const router = useRouter()
 
-    const handleChange = (e) => {
+    const handleChange = (e:any) => {
         console.log(e.target.value);
         router.push('/success')
     }
@@ -33,7 +32,7 @@ export default function UploadMenu({ toggle }) {
                 <input 
                     id="fileupload" 
                     type="file" 
-                    size="50000000"
+                    size={50000000}
                     accept=".jpeg, .jpg, .png, .bmp, .tiff, .pdf"
                 />
                 <label htmlFor="fileupload">Upload File</label>
@@ -47,9 +46,7 @@ export default function UploadMenu({ toggle }) {
                     onClick={
                         () => {
                             const camScan = document.getElementById('camera');
-                            camScan.click();
-                            console.log(camScan);
-                            console.log('camvalue',camScan.value);
+                            camScan?.click();
                         }
                     }
                 >
@@ -65,7 +62,7 @@ export default function UploadMenu({ toggle }) {
                         onClick={
                             () => {
                                 const fileUpld = document.getElementById('fileupload');
-                                fileUpld.click();
+                                fileUpld?.click();
                             }
                         }
                     >

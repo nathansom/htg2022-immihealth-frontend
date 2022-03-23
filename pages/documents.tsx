@@ -1,5 +1,5 @@
 import styles from '../styles/Main.module.css'
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect, ReactEventHandler } from 'react';
 import { useRouter } from 'next/router';
 
 import LayoutAlt from '../components/LayoutAlt';
@@ -25,7 +25,7 @@ export default function Main() {
     const router = useRouter();
     const [menuStat, setMenuStat] = useState(false);
 
-    const toggleDrawer = (open) => (event) => {
+    const toggleDrawer = (open:boolean) => (event:any) => {
         if (
           event &&
           event.type === 'keydown' &&

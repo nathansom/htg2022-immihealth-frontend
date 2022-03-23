@@ -3,6 +3,7 @@ import styles from '../styles/Register.module.css';
 import { useEffect, useState } from 'react';
 import { useRouter } from "next/router";
 import { localeContext, targetLocaleContext, userLocale, targetLocale } from '../lib/locale-context';
+import { userLocaleInterface, targetLocaleInterface} from '../lib/locale-context';
 
 import Layout from '../components/Layout'; 
 import Dropdown from '../components/Dropdown';
@@ -15,6 +16,28 @@ const countryData = require('../lib/supportedCountries.json')
 export default function Register() {
     const router = useRouter();
 
+    const [userLocale,setUserLocale] = useState('en');
+    const [targetLocale,setTargetLocale] = useState('');
+
+
+  const changeLocale = (e: React.ChangeEvent<HTMLInputElement>):void => {
+    setUserLocale(e.target.value);
+  }
+
+  const changeTargetLocale = (e: React.ChangeEvent<HTMLInputElement>):void => {
+    setTargetLocale(e.target.value);
+  }
+
+    const userLocaleState: userLocaleInterface = {
+        locale: userLocale,
+        changeLocale: changeLocale
+      }
+    
+      const targetLocaleState: targetLocaleInterface = {
+        locale: userLocale,
+        changeTargetLocale: changeTargetLocale
+      }
+
     return (
         <>
             <Layout>
@@ -22,12 +45,12 @@ export default function Register() {
             <h1>Welcome!</h1>
                     <p>Please confirm your preferred language</p>
                     <localeContext.Consumer>
-                        { ({ userLocale, changeLocale }) => (
+                        { (userLocaleState) => (
                             <Dropdown 
                             fieldLabel="Preferred Language" 
                             shortLabel="user-language"
                             locale={userLocale} 
-                            handleChange={changeLocale} 
+                            handleChange={userLocaleState?.changeLocale} 
                             data={langData}  
                         />
                         )}
@@ -35,12 +58,12 @@ export default function Register() {
                 
                     <p>Please confirm the official language of your new country</p>
                     <targetLocaleContext.Consumer>
-                        { ({ targetLocale, changeTargetLocale }) =>
+                        { (targetLocaleState) =>
                             <Dropdown 
                             fieldLabel="Official Language" 
                             shortLabel="official-language"
                             locale={targetLocale} 
-                            handleChange={changeTargetLocale} 
+                            handleChange={targetLocaleState?.changeTargetLocale} 
                             data={countryData}  
                         />
                         }

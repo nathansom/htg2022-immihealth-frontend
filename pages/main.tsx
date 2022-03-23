@@ -22,7 +22,7 @@ export default function Main() {
         <LayoutAlt>
             <Card className={`${styles.margin_x__10}`}>
                 <CardContent>
-                    <h1>{`Welcome, ${userName}`}</h1>
+                    <h1>Welcome, Sara!</h1>
                     <p>Let’s learn more about health insurance</p>
                     <Button variant="contained">Get Started</Button>
                 </CardContent>

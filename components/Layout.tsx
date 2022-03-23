@@ -1,8 +1,9 @@
+import React from 'react';
 import styles from '../styles/Home.module.css';
 
 import Link from 'next/Link'
 
-export default function Layout({ children }) {
+export default function Layout({ children }:React.AllHTMLAttributes<HTMLElement>) {
     return (
         <div className={styles.container}>
       <header className={styles.main}>
