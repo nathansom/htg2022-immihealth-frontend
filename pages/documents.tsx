@@ -1,5 +1,5 @@
 import styles from '../styles/Main.module.css'
-import React, { useState, useEffect, ReactEventHandler } from 'react';
+import React, { useState } from 'react';
 import { useRouter } from 'next/router';
 
 import LayoutAlt from '../components/LayoutAlt';
@@ -13,13 +13,9 @@ import Fab from '@mui/material/Fab';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import ArticleIcon from '@mui/icons-material/Article';
 import MedicationIcon from '@mui/icons-material/Medication';
-import LogoutIcon from '@mui/icons-material/Logout';
-import PersonIcon from '@mui/icons-material/Person';
 import VerifiedUserIcon from '@mui/icons-material/VerifiedUser';
-import PersonSearchIcon from '@mui/icons-material/PersonSearch';
 import AddIcon from '@mui/icons-material/Add';
-import UploadIcon from '@mui/icons-material/Upload';
-import PhotoCameraIcon from '@mui/icons-material/PhotoCamera';
+
 
 export default function Main() {
     const router = useRouter();
@@ -47,7 +43,7 @@ export default function Main() {
                 >
                     <ArrowBackIcon />
                 </Fab>
-                <Card className={styles.margin_x__10} style={{width:"80vw"}}>
+                <Card className={styles.margin_x__10} sx={{width:"80vw"}}>
                     <CardContent>
                       <h1>My Documents</h1>
                     </CardContent>
@@ -72,7 +68,7 @@ export default function Main() {
             <Button 
                 variant="contained" 
                 className={styles.button_card}
-                style={{marginBottom:"100px"}}
+                sx={{marginBottom:"100px"}}
                 onClick={ () => router.push('/insurancedocs') } 
             >
                 <VerifiedUserIcon />

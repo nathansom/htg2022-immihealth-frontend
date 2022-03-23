@@ -25,13 +25,13 @@
   }
 
   .button_card {
-      width: 90vw;
-      margin: 10px 5px;
-      display: flex;
-      align-self: center;
-      background-color: white;
-      color: #000000;
-      transition: all 1s;
+      width: 90vw !important;
+      margin: 10px 5px !important;
+      display: flex !important;
+      align-self: center !important;
+      background-color: white !important;
+      color: #000000 !important;
+      transition: all 1s !important;
   }
 
   .button_card:hover {
