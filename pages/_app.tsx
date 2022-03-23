@@ -61,6 +61,11 @@ export default function MyApp({ Component, pageProps }: AppProps) {
           sizes="32x32"
         />
         <link rel="apple-touch-icon" href="/icons/icon-32x32.png"></link>
+        <link rel="apple-touch-icon" sizes="72x72" href="/icons/icon-72x72.png"></link>
+        <link rel="apple-touch-icon" sizes="96x96" href="/icons/icon-96x96.png"></link>
+        <link rel="apple-touch-icon" sizes="152x152" href="/icons/icon-152x152.png"></link>
+        <link rel="apple-touch-icon" sizes="192x192" href="/icons/icon-192x192.png"></link>
+        <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="theme-color" content="#0085FF" />
       </Head>
       <localeContext.Provider value={userLocaleState}>
