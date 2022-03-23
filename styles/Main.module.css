@@ -35,11 +35,11 @@
   }
 
   .button_card:hover {
-    width: 85vw;
-    margin: 10px 0;
-    display: flex;
-    background-color: #1976D2;
-    color: #ffffff;
+    width: 85vw !important;
+    margin: 10px 0 !important;
+    display: flex !important;
+    background-color: #1976D2 !important;
+    color: #ffffff !important;
 }
 
 
