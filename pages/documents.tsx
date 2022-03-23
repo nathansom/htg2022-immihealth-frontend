@@ -43,7 +43,7 @@ export default function Main() {
                 >
                     <ArrowBackIcon />
                 </Fab>
-                <Card className={styles.margin_x__10} sx={{width:"80vw"}}>
+                <Card className={styles.margin_y__10} sx={{width:"80vw"}}>
                     <CardContent>
                       <h1>My Documents</h1>
                     </CardContent>
@@ -82,6 +82,7 @@ export default function Main() {
             >
                 <AddIcon />
             </Fab>
+            <div style={{height:150}}></div>
             <SwipeableDrawer
                 anchor="bottom"
                 open={menuStat}

@@ -20,7 +20,7 @@ export default function Main() {
 
     return (
         <LayoutAlt>
-            <Card sx={{margin:'0 10px'}}>
+            <Card className={styles.margin_x__10}>
                 <CardContent>
                     <h1>Welcome, Sara!</h1>
                     <p>Let’s learn more about health insurance</p>

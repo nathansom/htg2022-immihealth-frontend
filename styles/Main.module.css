@@ -19,9 +19,9 @@
     width: 90vw;
 }
   
-  .margin_x__10 {
-      margin-top: 10px;
-      margin-bottom: 10px;
+  .margin_y__10 {
+      margin-top: 10px !important;
+      margin-bottom: 10px !important;
   }
 
   .button_card {
@@ -44,12 +44,12 @@
 
 
 .button_card__danger {
-    width: 90vw;
-    margin: 10px 0;
-    display: flex;
-    background-color: #8C0000;
-    color: #ffffff;
-    transition: all 1s;
+    width: 90vw !important;
+    margin: 10px 0 !important;
+    display: flex !important;
+    background-color: #8C0000 !important;
+    color: #ffffff !important;
+    transition: all 1s !important;
 }
 
 .button_card__danger:hover {
@@ -60,10 +60,10 @@
 }
 
 .bottom_center {
-    position: absolute;
-    left: 45%;
-    bottom: 100px;
-    width: 56px;
+    position: relative !important;
+    left: 44vw !important;
+    bottom: 1% !important;
+    width: 56px !important;
 }
 
 .card_white {
