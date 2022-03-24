@@ -7,7 +7,7 @@ import UploadMenu from '../components/UploadMenu';
 import { Card, 
         CardContent, 
         Button,
-        SwipeableDrawer
+        Drawer
     } from '@mui/material';
 import { StyledEngineProvider } from '@mui/material';
 
@@ -89,14 +89,17 @@ export default function Main() {
             </Fab>
             <div style={{height:150}}></div>
             </StyledEngineProvider>
-            <SwipeableDrawer
+            <Drawer
                 anchor="bottom"
                 open={menuStat}
+                variant="temporary"
                 onClose={toggleDrawer(false)}
-                onOpen={toggleDrawer(true)}
+                ModalProps={{
+                    keepMounted: true,
+                  }}
             >
                 <UploadMenu toggle={toggleDrawer(false)} />
-            </SwipeableDrawer>
+            </Drawer>
         </LayoutAlt>
     )
 }
