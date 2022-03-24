@@ -6,6 +6,7 @@ import { Card,
         CardContent, 
         Button
     } from '@mui/material';
+import { StyledEngineProvider } from '@mui/material';
 
 import ArticleIcon from '@mui/icons-material/Article';
 import MedicationIcon from '@mui/icons-material/Medication';
@@ -20,7 +21,8 @@ export default function Main() {
 
     return (
         <LayoutAlt>
-            <Card className={styles.margin_x__10}>
+           <StyledEngineProvider injectFirst>
+            <Card className={styles.margin_y__10}>
                 <CardContent>
                     <h1>Welcome, Sara!</h1>
                     <p>Let’s learn more about health insurance</p>
@@ -76,6 +78,7 @@ export default function Main() {
                 <LogoutIcon />
                 <h2>Logout</h2>
             </Button>
+           </StyledEngineProvider>
         </LayoutAlt>
     )
 }

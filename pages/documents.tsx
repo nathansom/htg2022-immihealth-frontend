@@ -9,6 +9,8 @@ import { Card,
         Button,
         SwipeableDrawer
     } from '@mui/material';
+import { StyledEngineProvider } from '@mui/material';
+
 import Fab from '@mui/material/Fab';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import ArticleIcon from '@mui/icons-material/Article';
@@ -35,6 +37,7 @@ export default function Main() {
     return (
         <LayoutAlt>
             <div className={styles.flex_row}>
+                <StyledEngineProvider injectFirst>
                 <Fab 
                     color="primary" 
                     aria-label="submit"
@@ -48,6 +51,7 @@ export default function Main() {
                       <h1>My Documents</h1>
                     </CardContent>
                  </Card>
+                </StyledEngineProvider>
             </div>
             <Button 
                 variant="contained" 
@@ -57,6 +61,7 @@ export default function Main() {
                 <MedicationIcon />
                 <h2>Medical Reports</h2>
             </Button>
+            <StyledEngineProvider injectFirst>
             <Button 
                 variant="contained" 
                 className={styles.button_card}
@@ -83,6 +88,7 @@ export default function Main() {
                 <AddIcon />
             </Fab>
             <div style={{height:150}}></div>
+            </StyledEngineProvider>
             <SwipeableDrawer
                 anchor="bottom"
                 open={menuStat}
