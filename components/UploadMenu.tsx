@@ -34,6 +34,15 @@ export default function UploadMenu({ toggle }:any) {
         }
     }
 
+    const handleCancel = (e:any) => {
+        const camUpload:HTMLInputElement = document.querySelector('input#camera');
+        const fileUpload:HTMLInputElement = document.querySelector('input#fileupload');
+        camUpload.value = '';
+        fileUpload.value = '';
+        setFilepath('');
+        setShowSubmit(false);
+    }
+
     const toggleSubmit = (show:boolean) => (event:any) => {
         if (
           event &&
@@ -140,7 +149,7 @@ export default function UploadMenu({ toggle }:any) {
         <Drawer
                 anchor="bottom"
                 open={showSubmit}
-                onClose={toggleSubmit(false)}
+                /*onClose={toggleSubmit(false)}*/
             >
                 <Box
         sx={{
@@ -152,11 +161,10 @@ export default function UploadMenu({ toggle }:any) {
         role="presentation"
         >
             <Button 
-                variant="outlined" 
-                sx={{
-                    width: '10rem', 
-                    marginBottom: '10px', 
-                    display: showSubmit ? 'block' : 'none'
+                variant="contained" 
+                sx={{ 
+                    marginBottom: '15px', 
+                    display: showSubmit ? 'flex' : 'none'
                     }}
                 /* 
                 *Send POST request to Form Recognizer 
@@ -166,8 +174,15 @@ export default function UploadMenu({ toggle }:any) {
             >
             Proceed
             </Button>
-            <p style={{textAlign: 'center'}}>Do NOT tap outside unless you want to cancel the process</p>
-        </Box>
+            <Button 
+                variant="outlined" 
+                color="error"
+                onClick={handleCancel}
+                sx={{marginBottom:"10px"}}
+            >
+                Cancel
+            </Button>
+          </Box>
         </Drawer>
     </div>
     )
